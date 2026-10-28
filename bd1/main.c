@@ -48,6 +48,6 @@ scanf("%lf", &DeductionPercent);
 NetSalary = salary - salary * DeductionPercent / 100;
 
 printf("Гар дээр ирэх цалин: %.2lf\n", NetSalary);
-
+lll
     return 0;
 }
