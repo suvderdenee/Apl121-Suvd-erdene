@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="biy daalt 1"/>
+        <attribute name="authors" value="suvderdene"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-27 06:47:07 PM"/>
+        <attribute name="created" value="c3V2ZGVyZGVuZTsxOTI7MjAyNi0xMC0yNTswMjoxNjozOSBQTTsyNTE2"/>
+        <attribute name="edited" value="c3V2ZGVyZGVuZTsxOTI7MjAyNi0xMC0yNzswNDozNjoxMyBBTTsxOzI2MDc="/>
+        <attribute name="edited" value="c3V2ZGVyZGVuZTtTVVZERVJERU5FUy1NQUM7MjAyNi0xMC0yNzswNjo0NzowNyBQTTszOzM1Njk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hours, rate, salary, DailyHours, MaxHours" type="Real" array="False" size=""/>
+            <declare name="DeductionPercent" type="Real" array="False" size=""/>
+            <declare name="day, NetSalary, MaxDay" type="Real" array="False" size=""/>
+            <assign variable="hours" expression="0"/>
+            <output expression="&quot;&#1256;&#1076;&#1257;&#1088; | &#1040;&#1078;&#1080;&#1083;&#1083;&#1072;&#1089;&#1072;&#1085; &#1094;&#1072;&#1075;&quot;" newline="True"/>
+            <output expression="&quot;--------------------------&quot;" newline="True"/>
+            <assign variable="MaxHours" expression="-1"/>
+            <assign variable="MaxDay" expression="0"/>
+            <for variable="day" start="1" end="7" direction="inc" step="1">
+                <output expression="day &amp; &quot;-&#1088; &#1257;&#1076;&#1088;&#1080;&#1081;&#1085; &#1072;&#1078;&#1080;&#1083;&#1083;&#1072;&#1089;&#1072;&#1085; &#1094;&#1072;&#1075;&quot;" newline="True"/>
+                <input variable="DailyHours"/>
+                <if expression="DailyHours &gt; MaxHours">
+                    <then>
+                        <assign variable="MaxHours" expression="DailyHours"/>
+                        <assign variable="MaxDay" expression="day"/>
+                    </then>
+                    <else/>
+                </if>
+                <output expression="day&amp;&quot; | &quot;&amp;DailyHours" newline="True"/>
+                <assign variable="hours" expression="hours + DailyHours"/>
+            </for>
+            <output expression="&quot;7 &#1093;&#1086;&#1085;&#1086;&#1075;&#1090; &#1085;&#1080;&#1081;&#1090; &#1072;&#1078;&#1080;&#1083;&#1083;&#1072;&#1089;&#1072;&#1085; &#1094;&#1072;&#1075;: &quot; &amp;hours" newline="True"/>
+            <output expression="&quot;&#1061;&#1072;&#1084;&#1075;&#1080;&#1081;&#1085; &#1080;&#1093; &#1072;&#1078;&#1080;&#1083;&#1083;&#1072;&#1089;&#1072;&#1085; &#1257;&#1076;&#1257;&#1088;: &quot; &amp;MaxDay" newline="True"/>
+            <output expression="MaxHours" newline="True"/>
+            <output expression="&quot;&#1062;&#1072;&#1075;&#1080;&#1081;&#1085; &#1093;&#1257;&#1083;&#1089;&quot;" newline="True"/>
+            <input variable="rate"/>
+            <if expression="hours &gt; 40">
+                <then>
+                    <assign variable="salary" expression="40 * rate + (hours - 40) * rate * 1.5"/>
+                </then>
+                <else>
+                    <assign variable="salary" expression="hours * rate"/>
+                </else>
+            </if>
+            <output expression="&quot;&#1053;&#1080;&#1081;&#1090; &#1094;&#1072;&#1083;&#1080;&#1085;: &quot; &amp;salary" newline="True"/>
+            <output expression="&quot;&#1057;&#1091;&#1091;&#1090;&#1075;&#1072;&#1083;&#1099;&#1085; &#1093;&#1091;&#1074;&#1100; &#1086;&#1088;&#1091;&#1091;&#1083;&#1085;&#1072; &#1091;&#1091;&quot;" newline="True"/>
+            <input variable="DeductionPercent"/>
+            <assign variable="NetSalary" expression="salary - salary * DeductionPercent / 100"/>
+            <output expression="&quot;&#1043;&#1072;&#1088; &#1076;&#1101;&#1101;&#1088; &#1080;&#1088;&#1101;&#1093; &#1094;&#1072;&#1083;&#1080;&#1085;: &quot; &amp;NetSalary" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
