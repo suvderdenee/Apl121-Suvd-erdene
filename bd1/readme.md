@@ -93,4 +93,4 @@ Flowgorithm дээр `quest.fprg` файлыг нээгээд Run дарна.
 AI-аас авсан тусламжаа ашиглан өөрөө flowgorithm болон program-аа бичсэн
 
 ### Бичлэгийн холбоос
-[ЭНД БИЧЛЭГИЙН ХОЛБООСОО ОРУУЛНА]
+[(https://youtu.be/mcSeMdU4nZ0?si=hYSBhrXoG8nKlwCo)]
